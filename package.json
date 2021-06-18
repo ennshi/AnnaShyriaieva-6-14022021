@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "env-cmd -f ./dev.env nodemon index.js",
+    "dev": "env-cmd -f ./dev.env nodemon --inspect index.js ",
     "start": "node index.js",
     "lint": "eslint \"./**/*.js\" --quiet"
   },

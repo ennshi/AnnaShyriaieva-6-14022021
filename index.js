@@ -3,8 +3,8 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT;
 const mongoose = require('mongoose');
-const errorHandler = require('./middlewares/errorHandler');
 
+const errorHandler = require('./middlewares/errorHandler');
 const authRoutes = require('./routes/authRoutes');
 const saucesRoutes = require('./routes/saucesRoutes');
 
