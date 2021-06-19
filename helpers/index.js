@@ -1,3 +1,6 @@
+const fs = require('fs');
+const path = require('path');
+
 exports.createError = (status, message, errors = { server: message }) => {
   const newErr = new Error(message);
   newErr.statusCode = status;
@@ -20,4 +23,10 @@ exports.isValidEmail = (trimmedEmail) => {
 exports.isValidPassword = (trimmedPassword) => {
   const regexp = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
   return regexp.test(trimmedPassword);
+};
+
+exports.clearImage = (filePath) => {
+  fs.unlink(path.join(__dirname, '..', filePath.replace('http://localhost:3000', '')), (err) => {
+    console.log(err);
+  });
 };

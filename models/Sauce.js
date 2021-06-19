@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const sauceSchema = new mongoose.Schema({
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  },
   name: {
     type: String,
     required: true,
@@ -33,18 +38,22 @@ const sauceSchema = new mongoose.Schema({
   likes: {
     type: Number,
     required: true,
+    default: 0,
   },
   dislikes: {
     type: Number,
     required: true,
+    default: 0,
   },
   usersLiked: {
     type: [mongoose.Schema.Types.ObjectId],
     ref: 'User',
+    default: [],
   },
   usersDisliked: {
     type: [mongoose.Schema.Types.ObjectId],
     ref: 'User',
+    default: [],
   },
 });
 

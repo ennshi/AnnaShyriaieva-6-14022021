@@ -9,6 +9,7 @@ const authRoutes = require('./routes/authRoutes');
 const saucesRoutes = require('./routes/saucesRoutes');
 
 app.use(express.json());
+app.use('/public', express.static('public'));
 
 app.use((_, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
