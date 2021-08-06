@@ -20,10 +20,10 @@ exports.isValidEmail = (trimmedEmail) => {
   return regexp.test(trimmedEmail);
 };
 
-exports.isValidPassword = (trimmedPassword) => {
-  const regexp = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
-  return regexp.test(trimmedPassword);
-};
+// exports.isValidPassword = (trimmedPassword) => {
+//   const regexp = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
+//   return regexp.test(trimmedPassword);
+// };
 
 exports.clearImage = (filePath) => {
   fs.unlink(path.join(__dirname, '..', filePath.replace('http://localhost:3000', '')), (err) => {

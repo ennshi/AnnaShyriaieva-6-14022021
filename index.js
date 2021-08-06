@@ -11,7 +11,7 @@ const authRoutes = require('./routes/authRoutes');
 const saucesRoutes = require('./routes/saucesRoutes');
 
 app.use(helmet());
-app.use(cors({ origin: 'http://localhost:4200' }));
+app.use(cors({ origin: 'http://127.0.0.1:8081' }));
 
 app.use(express.json());
 app.use('/public', express.static('public'));
